@@ -14,5 +14,16 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+
+#以下插件在 lede/package 目录下执行即可
+#科学上网插件
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+git clone --depth=1 -b master https://github.com/vernesong/OpenClash package/OpenClash
+#广告过滤插件
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+#应用过滤
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+#Lienol整理的一堆实用的插件
+git clone https://github.com/Lienol/openwrt-package package/openwrt-package
